@@ -1,2 +1,2 @@
 language = "python3"
-run = "clang-7 -pthread -lm -o main main.py"
+run = "clang-7 -pthread -lm -o main.py"
