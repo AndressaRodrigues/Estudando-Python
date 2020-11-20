@@ -43,7 +43,7 @@ def jogada():
 def jogar(x):
     while True:
         if (x == "y"):
-            print(jogada())
+            jogada()
             return True
        
 
