@@ -1,39 +1,42 @@
 #Jogo de Craps. Faça um programa de implemente um jogo de Craps. O jogador lança um par de dados, obtendo um valor entre 2 e 12. Se, na primeira jogada, você tirar 7 ou 11, você um "natural" e ganhou. Se você tirar 2, 3 ou 12 na primeira jogada, isto é chamado de "craps" e você perdeu. Se, na primeira jogada, você fez um 4, 5, 6, 8, 9 ou 10,este é seu "Ponto". Seu objetivo agora é continuar jogando os dados até tirar este número novamente. Você perde, no entanto, se tirar um 7 antes de tirar este Ponto novamente.
 import random
 
-d = []
 craps = [2, 3, 12]
 natural = [7, 11]
 deNovo = [4, 5, 6, 8, 9, 10, 11]
 entradas = ["!", "y", "n"]
-
+buscaPar = [2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 0]
 
 def segJogada(x):
-    k = random.randint(2, 12)
-    if (k == 7):
-        print(k)
-        return "Craps! Você perdeu."
-    elif (k == x):
-        print(k)
-        return "Você ganhou!"
-    else:
-        print(k)
-        d.append(k)
-        segJogada(k)
-        return (k)
+    buscaPar[10] = x
+    while True:
+        k = random.randint(2, 12)
+        if (k == 7):
+            print("O número sorteado foi:", k)
+            print("Craps! Você perdeu.")
+            break
+        if (k == buscaPar[-1]):
+            print("O número sorteado foi:", k)
+            print("Você ganhou!")
+            break
+        if k in buscaPar[0:9]:
+            print("O número sorteado foi:", k)
+            print("Vamos de novo.")
+
+
 
 def jogada():
     i = random.randint(2, 12)
     if i in natural:
-        print(i)
+        print("O número sorteado foi:", i)
         return "Natural. Você ganhou!"
-    elif i in craps:
-        print(i)
+    if i in craps:
+        print("O número sorteado foi:", i)
         return "Craps! Você perdeu."
-    elif i in deNovo:
-        print(i)
+    if i in deNovo:
         print("Ponto!")
-        d.append(i)
+        print("Seu número da sorte é:", i)
+        print("Rolando os dados de n...")
         segJogada(i)
     
 
