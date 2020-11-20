@@ -1,0 +1,1 @@
+Jogo proposto nos exercícios disponíveis em https://wiki.python.org.br/ExerciciosFuncoes
