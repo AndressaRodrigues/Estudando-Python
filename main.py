@@ -5,6 +5,7 @@ d = []
 craps = [2, 3, 12]
 natural = [7, 11]
 deNovo = [4, 5, 6, 8, 9, 10, 11]
+entradas = ["!", "y", "n"]
 
 
 def segJogada(x):
@@ -37,19 +38,11 @@ def jogada():
     
 
 def jogar(x):
-    if (x == "y"):
-        print(jogada())
-        return True
-    elif (x == 'n'): 
-        return False
-    #elif (b == "!"):
-    #    regras()
-    else:
-        print("Resposta inválda.")
-        print("Digite 'y' para jogar, ou 'n' para parar:")
-        p = input()
-        jogar(p)
-        return p
+    while True:
+        if (x == "y"):
+            print(jogada())
+            return True
+       
 
 def regras():
     print("As regras do jogo são:")
@@ -57,14 +50,22 @@ def regras():
     print( "Se você tirar 7 ou 11, você venceu.")
     print("Se tirar 2, 3 ou 12, você perdeu.")
     print("Qualquer outro número, você seguirá rolando até achar o mesmo número novamente.")
-    print("Porém! Se achar 7 antes de achar o par correspondente, você perde.")
-    return
+    print("Porém! Se achar 7 antes de achar o par correspondente, você perde.\n")
+    return True
 
 while True:
-    print("Digite '!' para ver as regras, 'y' para jogar, ou 'n' para parar:")
-    b = input()
-    jogar(b)
-    if (jogar(b)==False):
-        print("fim de jogo")
-        break
+    try:
+        print("Digite '!' para ver as regras, 'y' para jogar, ou 'n' para parar:")
+        b = input()
+        if (b =="y"):
+            jogar(b)
+        if (b == "!"):
+            regras()
+        if (b == "n"):
+            print("fim de jogo")
+            break
+           
+    except (KeyboardInterrupt, SystemExit):
+        raise
+ 
     
