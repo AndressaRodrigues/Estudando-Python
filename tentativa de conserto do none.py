@@ -36,14 +36,14 @@ def jogada():
     if i in deNovo:
         print("Ponto!")
         print("Seu número da sorte é:", i)
-        print("Rolando os dados de n...")
+        print("Rolando os dados de novo...")
         segJogada(i)
     
 
 def jogar(x):
     while True:
         if (x == "y"):
-            print(jogada())
+            jogada()
             return True
        
 
@@ -70,5 +70,3 @@ while True:
            
     except (KeyboardInterrupt, SystemExit):
         raise
- 
-    
