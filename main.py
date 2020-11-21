@@ -14,11 +14,9 @@ def segJogada(x):
         if (k == 7):
             print("O número sorteado foi:", k)
             return "Craps! Você perdeu."
-            break
         if (k == buscaPar[-1]):
             print("O número sorteado foi:", k)
             return "Você ganhou!"
-            break
         if k in buscaPar[0:9]:
             print("O número sorteado foi:", k)
             print("Vamos de novo.")
