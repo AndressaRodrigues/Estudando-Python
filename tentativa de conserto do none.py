@@ -13,15 +13,16 @@ def segJogada(x):
         k = random.randint(2, 12)
         if (k == 7):
             print("O número sorteado foi:", k)
-            print("Craps! Você perdeu.")
+            return "Craps! Você perdeu."
             break
         if (k == buscaPar[-1]):
             print("O número sorteado foi:", k)
-            print("Você ganhou!")
+            return "Você ganhou!"
             break
         if k in buscaPar[0:9]:
             print("O número sorteado foi:", k)
-            print("Vamos de novo.")
+            return "Vamos de novo."
+            break
 
 
 
@@ -37,7 +38,8 @@ def jogada():
         print("Ponto!")
         print("Seu número da sorte é:", i)
         print("Rolando os dados de novo...")
-        segJogada(i)
+        return segJogada(i)
+        
     
 
 def jogar(x):
